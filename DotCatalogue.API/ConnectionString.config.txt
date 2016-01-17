@@ -1,0 +1,3 @@
+﻿<connectionStrings>
+  <add name="DotCatalogueConnection" connectionString="Server=[server];Database=DotCatalogue;User ID=[user];Password=[password];" providerName="System.Data.SqlClient"/>
+</connectionStrings>
