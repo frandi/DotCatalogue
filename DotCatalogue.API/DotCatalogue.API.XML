@@ -1,0 +1,172 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DotCatalogue.API</name>
+    </assembly>
+    <members>
+        <member name="T:DotCatalogue.API.SwaggerConfig">
+            <summary>
+            Swagger configuration
+            </summary>
+        </member>
+        <member name="M:DotCatalogue.API.SwaggerConfig.Register">
+            <summary>
+            Register swagger
+            </summary>
+        </member>
+        <member name="T:DotCatalogue.API.UnityResolver">
+            <summary>
+            Unity resolver
+            </summary>
+        </member>
+        <member name="F:DotCatalogue.API.UnityResolver._container">
+            <summary>
+            Unity container
+            </summary>
+        </member>
+        <member name="M:DotCatalogue.API.UnityResolver.#ctor(Microsoft.Practices.Unity.IUnityContainer)">
+            <summary>
+            Instantiate UnityResolver
+            </summary>
+            <param name="container"></param>
+        </member>
+        <member name="M:DotCatalogue.API.UnityResolver.BeginScope">
+            <summary>
+            Begin scope
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DotCatalogue.API.UnityResolver.Dispose">
+            <summary>
+            Dispose resolver
+            </summary>
+        </member>
+        <member name="M:DotCatalogue.API.UnityResolver.GetService(System.Type)">
+            <summary>
+            Get registered service
+            </summary>
+            <param name="serviceType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotCatalogue.API.UnityResolver.GetServices(System.Type)">
+            <summary>
+            Get registered services
+            </summary>
+            <param name="serviceType"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DotCatalogue.API.WebApiConfig">
+            <summary>
+            Configuration of Web Api
+            </summary>
+        </member>
+        <member name="M:DotCatalogue.API.WebApiConfig.Register(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Register WebApiConfig
+            </summary>
+            <param name="config"></param>
+        </member>
+        <member name="T:DotCatalogue.API.Controllers.CategoriesController">
+            <summary>
+            Controller for Category entity
+            </summary>
+        </member>
+        <member name="M:DotCatalogue.API.Controllers.CategoriesController.#ctor(DotCatalogue.BusinessLogic.ICategoryService)">
+            <summary>
+            Instantiate CategoriesController
+            </summary>
+            <param name="catService">Object of type ICategoryService</param>
+        </member>
+        <member name="M:DotCatalogue.API.Controllers.CategoriesController.GetCategories">
+            <summary>
+            Get all root categories
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DotCatalogue.API.Controllers.CategoriesController.GetCategory(System.Int32)">
+            <summary>
+            Get a category by id
+            </summary>
+            <param name="id">Category id</param>
+            <returns></returns>
+        </member>
+        <member name="M:DotCatalogue.API.Controllers.CategoriesController.PostCategory(DotCatalogue.Model.Category)">
+            <summary>
+            Insert new category
+            </summary>
+            <param name="category">Category object</param>
+            <returns></returns>
+        </member>
+        <member name="M:DotCatalogue.API.Controllers.CategoriesController.PutCategory(System.Int32,DotCatalogue.Model.Category)">
+            <summary>
+            Update existing category
+            </summary>
+            <param name="id">Category id</param>
+            <param name="category">Category object with new values</param>
+            <returns></returns>
+        </member>
+        <member name="M:DotCatalogue.API.Controllers.CategoriesController.DeleteCategory(System.Int32)">
+            <summary>
+            Remove a category
+            </summary>
+            <param name="id">Category id</param>
+            <returns></returns>
+        </member>
+        <member name="T:DotCatalogue.API.Controllers.ProductsController">
+            <summary>
+            Controller of Product entity
+            </summary>
+        </member>
+        <member name="M:DotCatalogue.API.Controllers.ProductsController.#ctor(DotCatalogue.BusinessLogic.IProductService)">
+            <summary>
+            Instantiate ProductsController
+            </summary>
+            <param name="prodService"></param>
+        </member>
+        <member name="M:DotCatalogue.API.Controllers.ProductsController.GetProducts">
+            <summary>
+            Get all products
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DotCatalogue.API.Controllers.ProductsController.GetProduct(System.Int32)">
+            <summary>
+            Get product by id
+            </summary>
+            <param name="id">Product id</param>
+            <returns></returns>
+        </member>
+        <member name="M:DotCatalogue.API.Controllers.ProductsController.PostProduct(DotCatalogue.Model.Product)">
+            <summary>
+            Insert new product
+            </summary>
+            <param name="product">Product object</param>
+            <returns></returns>
+        </member>
+        <member name="M:DotCatalogue.API.Controllers.ProductsController.PutProduct(System.Int32,DotCatalogue.Model.Product)">
+            <summary>
+            Update existing product
+            </summary>
+            <param name="id">Product id</param>
+            <param name="product">Product object</param>
+            <returns></returns>
+        </member>
+        <member name="M:DotCatalogue.API.Controllers.ProductsController.DeleteProduct(System.Int32)">
+            <summary>
+            Remove a product
+            </summary>
+            <param name="id">Product id</param>
+            <returns></returns>
+        </member>
+        <member name="T:DotCatalogue.API.WebApiApplication">
+            <summary>
+            WebApiApplication
+            </summary>
+        </member>
+        <member name="M:DotCatalogue.API.WebApiApplication.Application_Start">
+            <summary>
+            On application start
+            </summary>
+        </member>
+    </members>
+</doc>
