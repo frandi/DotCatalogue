@@ -230,7 +230,7 @@ namespace DotCatalogue.API
 
         private static string GetXmlCommentsPath()
         {
-            return System.String.Format(@"{0}\bin\DotCatalogue.API.XML", System.AppDomain.CurrentDomain.BaseDirectory);
+            return System.String.Format(@"{0}\DotCatalogue.API.XML", System.AppDomain.CurrentDomain.BaseDirectory);
         }
     }
 }
