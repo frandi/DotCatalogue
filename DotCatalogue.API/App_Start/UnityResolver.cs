@@ -8,10 +8,20 @@ using System.Web.Http.Dependencies;
 
 namespace DotCatalogue.API
 {
+    /// <summary>
+    /// Unity resolver
+    /// </summary>
     public class UnityResolver : IDependencyResolver
     {
+        /// <summary>
+        /// Unity container
+        /// </summary>
         protected IUnityContainer _container;
 
+        /// <summary>
+        /// Instantiate UnityResolver
+        /// </summary>
+        /// <param name="container"></param>
         public UnityResolver(IUnityContainer container)
         {
             if (container == null)
@@ -20,17 +30,29 @@ namespace DotCatalogue.API
             _container = container;
         }
         
+        /// <summary>
+        /// Begin scope
+        /// </summary>
+        /// <returns></returns>
         public IDependencyScope BeginScope()
         {
             var child = _container.CreateChildContainer();
             return new UnityResolver(child);
         }
 
+        /// <summary>
+        /// Dispose resolver
+        /// </summary>
         public void Dispose()
         {
             _container.Dispose();
         }
 
+        /// <summary>
+        /// Get registered service
+        /// </summary>
+        /// <param name="serviceType"></param>
+        /// <returns></returns>
         public object GetService(Type serviceType)
         {
             try
@@ -43,6 +65,11 @@ namespace DotCatalogue.API
             }
         }
 
+        /// <summary>
+        /// Get registered services
+        /// </summary>
+        /// <param name="serviceType"></param>
+        /// <returns></returns>
         public IEnumerable<object> GetServices(Type serviceType)
         {
             try

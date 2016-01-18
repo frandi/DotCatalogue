@@ -9,6 +9,9 @@ using System.Web.Http;
 
 namespace DotCatalogue.API.Controllers
 {
+    /// <summary>
+    /// Controller of Product entity
+    /// </summary>
     public class ProductsController : ApiController
     {
         #region Private variables
@@ -16,17 +19,30 @@ namespace DotCatalogue.API.Controllers
         #endregion
 
         #region Constructors
+        /// <summary>
+        /// Instantiate ProductsController
+        /// </summary>
+        /// <param name="prodService"></param>
         public ProductsController(IProductService prodService)
         {
             _prodService = prodService;
         } 
         #endregion
 
+        /// <summary>
+        /// Get all products
+        /// </summary>
+        /// <returns></returns>
         public IQueryable<Product> GetProducts()
         {
             return _prodService.GetAllProducts().AsQueryable();
         }
 
+        /// <summary>
+        /// Get product by id
+        /// </summary>
+        /// <param name="id">Product id</param>
+        /// <returns></returns>
         public IHttpActionResult GetProduct(int id)
         {
             var product = _prodService.GetProductById(id);
@@ -36,6 +52,11 @@ namespace DotCatalogue.API.Controllers
             return NotFound();
         }
 
+        /// <summary>
+        /// Insert new product
+        /// </summary>
+        /// <param name="product">Product object</param>
+        /// <returns></returns>
         public IHttpActionResult PostProduct(Product product)
         {
             if (!ModelState.IsValid)
@@ -48,6 +69,12 @@ namespace DotCatalogue.API.Controllers
             return CreatedAtRoute("DefaultApi", new { id = product.Id }, product);
         }
 
+        /// <summary>
+        /// Update existing product
+        /// </summary>
+        /// <param name="id">Product id</param>
+        /// <param name="product">Product object</param>
+        /// <returns></returns>
         public IHttpActionResult PutProduct(int id, Product product)
         {
             if (!ModelState.IsValid)
@@ -70,6 +97,11 @@ namespace DotCatalogue.API.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
+        /// <summary>
+        /// Remove a product
+        /// </summary>
+        /// <param name="id">Product id</param>
+        /// <returns></returns>
         public IHttpActionResult DeleteProduct(int id)
         {
             var product = _prodService.RemoveProduct(id);

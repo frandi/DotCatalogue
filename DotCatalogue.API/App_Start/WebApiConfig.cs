@@ -8,8 +8,15 @@ using System.Web.Http;
 
 namespace DotCatalogue.API
 {
+    /// <summary>
+    /// Configuration of Web Api
+    /// </summary>
     public static class WebApiConfig
     {
+        /// <summary>
+        /// Register WebApiConfig
+        /// </summary>
+        /// <param name="config"></param>
         public static void Register(HttpConfiguration config)
         {
             // Unity
